@@ -13,7 +13,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-app.use(require('./routes/usuario')); //se llama  a las rutas de usuarios de los servicios
+//configuracion global de rutas
+app.use(require('./routes/index'));
 
 mongoose.connect(process.env.URLDB,
     { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true },//Strign que viene x default
